@@ -9,4 +9,9 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 	$scope.contactList = response;
     });
 
+    $scope.addContact = function() {
+	console.log($scope.contact);
+	$http.post("/contactList", $scope.contact);
+    };
+
 }]);
