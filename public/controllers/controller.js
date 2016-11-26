@@ -28,4 +28,22 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 	});
     };
 
+    $scope.edit = function(id) {
+	console.log(id);
+	$http.get("/contactList/" + id).success( function(response) {
+	    $scope.contact = response; // put response in input boxes 
+	});
+    };
+
+    $scope.update = function(id) {
+	console.log($scope.contact._id);
+	$http.put("/contactList/" + $scope.contact._id, $scope.contact).success(function(response) {
+	    refresh();
+	});
+    };
+
+    $scope.deselect = function() {
+	$scope.contact = "";
+    };
+
 }]);
