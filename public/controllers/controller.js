@@ -2,7 +2,7 @@
 var myApp = angular.module("myApp", [] );
 
 myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
-    console.log("Helloz");
+    console.log("Hello controller");
 
     var refresh = function() {
 	$http.get("/contactList").success(function(response) {
@@ -11,13 +11,19 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 	    $scope.contact = "";  // clear input boxes
 	});
     };
-
     refresh();
 
     $scope.addContact = function() {
 	console.log($scope.contact);
 	$http.post("/contactList", $scope.contact).success(function(response) {
 	    console.log(response);
+	    refresh();
+	});
+    };
+
+    $scope.remove = function(id) {
+	console.log(id);
+	$http.delete("/contactList/" + id).success(function(response) {
 	    refresh();
 	});
     };
