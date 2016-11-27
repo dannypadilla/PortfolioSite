@@ -68,8 +68,7 @@
 	</div>
 
 	<!-- Temp for each element from database -->
-	<div class="row">
-	  
+	<div class="row">	  
 	  <div class="col-sm-4 portfolio-item">
 	    <a href="#educationModal1" class="education-link" data-toggle="modal">
 	      <div class="caption">
@@ -80,10 +79,8 @@
 	    </a>
 	    </div>	      
 	  </div>
-	  
 	</div>
 
-	<!-- original html: incorporate -->
 	<table class="table table-striped">
 	  <thead>
 	    <tr>
@@ -106,66 +103,60 @@
     <!-- Skills -->
     <section id="skills">
       <div class="container" ng-controller="AppCtrl">
-	
 	<div class="row">
 	  <div class="col-lg-12 text-center">
 	    <h2>Skills</h2>
 	    <hr class="star-primary">
 	  </div>
 	</div>
-
-	<!-- Temp for each element from database -->
-	<div class="row">
-	  <div class="col-sm-4 skill-item">
-	    <a href="#skillModal1" class="skill-link" data-toggle="modal">
-	      <div class="caption">
-		<div class="caption-content">
-		  <i class="fa fa-search-plus fa-3x"></i>
-		</div>
-		<img src="" class="img-responsive" alt="">
-	    </a>
-	    </div>
-	  </div>
-	</div>
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>Skill</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="skill in portfolio | filter:{type: 'skill'}">
+	      <td>{{skill.skill}}</td>
+	    </tr>
+	  </tbody>
+	</table>
       </div>
     </section>
 
     <!-- Projects -->
     <section id="projects">
       <div class="container" ng-controller="AppCtrl">
-	
 	<div class="row">
 	  <div class="col-lg-12 text-center">
 	    <h2>Projects</h2>
 	    <hr class="star-primary">
 	  </div>
 	</div>
-
-	<!-- Temp for each element from database -->
-	<div class="row">
-	  
-	  <div class="col-sm-4 project-item">
-	    <a href="#projectModal1" class="project-link" data-toggle="modal">
-	      <div class="caption">
-		<div class="caption-content">
-		  <i class="fa fa-search-plus fa-3x"></i>
-		</div>
-		<img src="" class="img-responsive" alt="">
-	    </a>
-	    </div>	      
-	  </div>
-	  
-	</div>
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>Title</th>
+	      <th>Description</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="project in portfolio | filter:{type: 'project'}">
+	      <td>{{project.title}}</td>
+	      <td>{{project.desc}}</td>
+	    </tr>
+	  </tbody>
+	</table>
       </div>
     </section>
 
-        <!-- Education -->
-    <section id="education">
+    <!-- Admin View -->
+    <section id="admin">
       <div class="container" ng-controller="AppCtrl">
 	
 	<div class="row">
 	  <div class="col-lg-12 text-center">
-	    <h2>Contact List</h2>
+	    <h2>Admin View</h2>
 	    <hr class="star-primary">
 	  </div>
 	</div>
@@ -181,7 +172,7 @@
 		</div>
 		<img src="" class="img-responsive" alt="">
 	    </a>
-	    </div>	      
+	    </div>    
 	  </div>
 	  
 	</div>
