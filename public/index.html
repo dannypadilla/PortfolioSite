@@ -90,24 +90,13 @@
 	      <th>School</th>
 	      <th>Degree</th>
 	      <th>Year</th>
-	      <th>Action</th>
-	      <th>&nbsp;</th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
-	      <td><input class="form-control" ng-model="contact.name"></td>
-	      <td><input class="form-control" ng-model="contact.email"></td>
-	      <td><input class="form-control" ng-model="contact.number"></td>
-	      <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
-	      <td><button class="btn = btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
-	    </tr>
-	    <tr ng-repeat="contact in contactList">
-	      <td>{{contact.name}}</td>
-	      <td>{{contact.email}}</td>
-	      <td>{{contact.number}}</td>
-	      <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
-	      <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+	    <tr ng-repeat="institute in portfolio | filter:{type: 'edu'}">
+	      <td>{{institute.school}}</td>
+	      <td>{{institute.degree}}</td>
+	      <td>{{institute.year}}</td>
 	    </tr>
 	  </tbody>
 	</table>
@@ -127,7 +116,6 @@
 
 	<!-- Temp for each element from database -->
 	<div class="row">
-	  
 	  <div class="col-sm-4 skill-item">
 	    <a href="#skillModal1" class="skill-link" data-toggle="modal">
 	      <div class="caption">
@@ -136,9 +124,8 @@
 		</div>
 		<img src="" class="img-responsive" alt="">
 	    </a>
-	    </div>	      
+	    </div>
 	  </div>
-	  
 	</div>
       </div>
     </section>

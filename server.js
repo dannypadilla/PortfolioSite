@@ -1,24 +1,24 @@
 var express = require("express");
 var app = express();
 var mongojs = require("mongojs");
-var db = mongojs("contactList", ["contactList"] );
+var db = mongojs("portfolio", ["portfolio"] );
 var bodyParser = require("body-parser");
 
 app.use(express.static(__dirname + "/public") );
 app.use(bodyParser.json() );
 
-app.get("/contactList", function(req, res) {
+app.get("/portfolio", function(req, res) {
     console.log("Received a GET request");
-    db.contactList.find(function(err, docs) {
+    db.portfolio.find(function(err, docs) {
 	 console.log(docs);
 	res.json(docs);
     });
 
 });
 
-app.post("/contactList", function(req, res) {
+app.post("/portfolio", function(req, res) {
     console.log(req.body);
-    db.contactList.insert(req.body, function(err, doc) {
+    db.portfolio.insert(req.body, function(err, doc) {
 	res.json(doc);
     });
 });

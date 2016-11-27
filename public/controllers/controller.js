@@ -5,10 +5,9 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
     console.log("Hello controller");
 
     var refresh = function() {
-	$http.get("/contactList").success(function(response) {
+	$http.get("/portfolio").success(function(response) {
 	    console.log("I got the data I requested");
-	    $scope.contactList = response;
-	    $scope.contact = "";  // clear input boxes
+	    $scope.portfolio = response;
 	});
     };
     refresh();
@@ -42,8 +41,5 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 	});
     };
 
-    $scope.deselect = function() {
-	$scope.contact = "";
-    };
 
 }]);
