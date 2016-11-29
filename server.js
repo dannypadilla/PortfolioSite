@@ -41,10 +41,9 @@ app.get("/portfolio/:id", function(req, res) {
 
 app.put("/portfolio/:id", function(req, res) {
     var id = req.params.id;
-    var type = req.params.type;
-
+    var type = req.body.type;
     if (type == "edu") {
-	console.log(id);
+	console.log(id + " server put");
 	db.portfolio.findAndModify(
 	    {query: {_id: mongojs.ObjectId(id)},
 	     update: {$set: {school: req.body.school,
