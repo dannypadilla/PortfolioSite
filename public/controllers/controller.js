@@ -12,9 +12,9 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
     };
     refresh();
 
-    $scope.addContact = function() {
-	console.log($scope.contact);
-	$http.post("/contactList", $scope.contact).success(function(response) {
+    $scope.addEntry = function() {
+	console.log($scope.portfolio);
+	$http.post("/portfolio", $scope.portfolio).success(function(response) {
 	    console.log(response);
 	    refresh();
 	});
@@ -22,21 +22,21 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 
     $scope.remove = function(id) {
 	console.log(id);
-	$http.delete("/contactList/" + id).success(function(response) {
+	$http.delete("/portfolio/" + id).success(function(response) {
 	    refresh();
 	});
     };
 
     $scope.edit = function(id) {
 	console.log(id);
-	$http.get("/contactList/" + id).success( function(response) {
-	    $scope.contact = response; // put response in input boxes 
+	$http.get("/portfolio/" + id).success( function(response) {
+	    $scope.portfolio = response; // put response in input boxes 
 	});
     };
 
     $scope.update = function(id) {
-	console.log($scope.contact._id);
-	$http.put("/contactList/" + $scope.contact._id, $scope.contact).success(function(response) {
+	console.log($scope.portfolio._id);
+	$http.put("/portfolio/" + $scope.portfolio._id, $scope.portfolio).success(function(response) {
 	    refresh();
 	});
     };
