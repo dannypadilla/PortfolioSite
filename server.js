@@ -23,26 +23,26 @@ app.post("/portfolio", function(req, res) {
     });
 });
 
-app.delete("/contactList/:id", function(req, res) {
+app.delete("/portfolio/:id", function(req, res) {
     var id = req.params.id;
     console.log(id);
-    db.contactList.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
+    db.portfolio.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
 	res.json(doc);
     });
 });
 
-app.get("/contactList/:id", function(req, res) {
+app.get("/portfolio/:id", function(req, res) {
     var id = req.params.id;
     console.log(id);
-    db.contactList.findOne({_id: mongojs.ObjectId(id)}, function(err, doc) {
+    db.portfolio.findOne({_id: mongojs.ObjectId(id)}, function(err, doc) {
 	res.json(doc);
     });
 });
 
-app.put("/contactList/:id", function(req, res) {
+app.put("/portfolio/:id", function(req, res) {
     var id = req.params.id;
     console.log(id);
-    db.contactList.findAndModify(
+    db.portfolio.findAndModify(
 	{query: {_id: mongojs.ObjectId(id)},
 	 update: {$set: {name: req.body.name,
 			email: req.body.email,
