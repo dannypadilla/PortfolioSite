@@ -43,7 +43,6 @@
 	</div>
       </div>
     </nav>
-
     <header>
       <div class="container">
 	<div class"row">
@@ -58,100 +57,6 @@
 	</div>
       </div>
     </header>
-
-    <!-- Education -->
-    <section id="education">
-      <div class="container" ng-controller="AppCtrl">
-	
-	<div class="row">
-	  <div class="col-lg-12 text-center">
-	    <h2>Education</h2>
-	    <hr class="star-primary">
-	  </div>
-	</div>
-
-	<!-- Temp for each element from database -->
-	<div class="row">	  
-	  <div class="col-sm-4 portfolio-item">
-	    <a href="#educationModal1" class="education-link" data-toggle="modal">
-	      <div class="caption">
-		<div class="caption-content">
-		  <i class="fa fa-search-plus fa-3x"></i>
-		</div>
-		<img src="" class="img-responsive" alt="">
-	    </a>
-	    </div>	      
-	  </div>
-	</div>
-
-	<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th>School</th>
-	      <th>Degree</th>
-	      <th>Year</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr ng-repeat="institute in portfolio | filter:{type: 'edu'}">
-	      <td>{{institute.school}}</td>
-	      <td>{{institute.degree}}</td>
-	      <td>{{institute.year}}</td>
-	    </tr>
-	  </tbody>
-	</table>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <div class="container" ng-controller="AppCtrl">
-	<div class="row">
-	  <div class="col-lg-12 text-center">
-	    <h2>Skills</h2>
-	    <hr class="star-primary">
-	  </div>
-	</div>
-	<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th>Skill</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr ng-repeat="skill in portfolio | filter:{type: 'skill'}">
-	      <td>{{skill.skill}}</td>
-	    </tr>
-	  </tbody>
-	</table>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container" ng-controller="AppCtrl">
-	<div class="row">
-	  <div class="col-lg-12 text-center">
-	    <h2>Projects</h2>
-	    <hr class="star-primary">
-	  </div>
-	</div>
-	<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th>Title</th>
-	      <th>Description</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr ng-repeat="project in portfolio | filter:{type: 'project'}">
-	      <td>{{project.title}}</td>
-	      <td>{{project.desc}}</td>
-	    </tr>
-	  </tbody>
-	</table>
-      </div>
-    </section>
 
     <!-- Admin View -->
     <section id="admin">
@@ -177,18 +82,20 @@
 	  </thead>
 	  <tbody>
 	    <tr>
-	      <td><input class="form-control" ng-model="portfolio.school"></td>
-	      <td><input class="form-control" ng-model="portfolio.degree"></td>
-	      <td><input class="form-control" ng-model="portfolio.year"></td>
-	      <td><button class="btn btn-primary" ng-click="addEntry()">Add Contact</button></td>
+	      <td><input class="form-control" ng-model="entry.school"></td>
+	      <td><input class="form-control" ng-model="entry.degree"></td>
+	      <td><input class="form-control" ng-model="entry.year"></td>
+	      <td><button class="btn btn-primary" ng-click="addEntry()">Add</button></td>
 	      <td><button class="btn = btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
 	    </tr>
-	    <tr ng-repeat="institute in portfolio | filter:{type: 'edu'}">
-	      <td>{{institute.school}}</td>
-      	      <td>{{institute.degree}}</td>
-	      <td>{{institute.year}}</td>
-	      <td><button class="btn btn-danger" ng-click="remove(portfolio._id)">Remove</button></td>
-	      <td><button class="btn btn-warning" ng-click="edit(portfolio._id)">Edit</button></td>
+	    <tr ng-repeat="entry in portfolio | filter:{type: 'edu'}">
+	      <td>{{entry.school}}</td>
+
+
+      	      <td>{{entry.degree}}</td>
+	      <td>{{entry.year}}</td>
+	      <td><button class="btn btn-danger" ng-click="remove(entry._id)">Remove</button></td>
+	      <td><button class="btn btn-warning" ng-click="edit(entry._id)">Edit</button></td>
 	    </tr>
 	  </tbody>
 	</table>
@@ -198,29 +105,7 @@
     
     <!-- Footer -->
     <footer class="text-center">      
-      <div class="footer-above">
-	<div class="container">
-	  <div class="row">
-	    <div class="footer-col col-md-4">
-	      
-	    </div>
-	    <div class="footer-col col-md-4">
-	      <h3>Social</h3>
-	      <ul class="list-inline">
-		<li>
-		  <a href="htp://www.github.com/dannypadilla" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-		</li>
-		<li>
-		  <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-		</li>
-		<li>
-		  <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-		</li>
-	      </ul>
-	    </div>
-	  </div>
-	</div>
-      </div>
+
       <div class="footer-below">
 	<div class="container">
 	  <div class="row">

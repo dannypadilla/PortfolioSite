@@ -8,13 +8,15 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 	$http.get("/portfolio").success(function(response) {
 	    console.log("I got the data I requested");
 	    $scope.portfolio = response;
+	    $scope.entry = ""; // clear input boxes
+	    
 	});
     };
     refresh();
 
     $scope.addEntry = function() {
-	console.log($scope.portfolio);
-	$http.post("/portfolio", $scope.portfolio).success(function(response) {
+	console.log($scope.entry);
+	$http.post("/portfolio", $scope.entry).success(function(response) {
 	    console.log(response);
 	    refresh();
 	});
@@ -30,16 +32,19 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
     $scope.edit = function(id) {
 	console.log(id);
 	$http.get("/portfolio/" + id).success( function(response) {
-	    $scope.portfolio = response; // put response in input boxes 
+	    $scope.entry = response; // put response in input boxes 
 	});
     };
 
     $scope.update = function(id) {
-	console.log($scope.portfolio._id);
-	$http.put("/portfolio/" + $scope.portfolio._id, $scope.portfolio).success(function(response) {
+	console.log($scope.entry._id);
+	$http.put("/portfolio/" + $scope.entry._id, $scope.entry).success(function(response) {
 	    refresh();
 	});
     };
 
+    $scope.deselect = function() {
+	$scope.entry = "";
+    };
 
 }]);

@@ -41,17 +41,41 @@ app.get("/portfolio/:id", function(req, res) {
 
 app.put("/portfolio/:id", function(req, res) {
     var id = req.params.id;
-    console.log(id);
-    db.portfolio.findAndModify(
-	{query: {_id: mongojs.ObjectId(id)},
-	 update: {$set: {name: req.body.name,
-			email: req.body.email,
-			number: req.body.number} },
-	 new: true
-	}, function(err, doc) {
-	    res.json(doc);
-	});
+    var type = req.params.type;
+
+    if (type == "edu") {
+	console.log(id);
+	db.portfolio.findAndModify(
+	    {query: {_id: mongojs.ObjectId(id)},
+	     update: {$set: {school: req.body.school,
+			     degree: req.body.degree,
+			     year: req.body.year} },
+	     new: true
+	    }, function(err, doc) {
+		res.json(doc);
+	    });
+    } else if (type == "skill") {
+	console.log(id);
+	db.portfolio.findAndModify(
+	    {query: {_id: mongojs.ObjectId(id)},
+	     update: {$set: {skill: req.body.skill} },
+	     new: true
+	    }, function(err, doc) {
+		res.json(doc);
+	    });
+    } else if (type == "projects") {
+	console.log(id);
+	db.portfolio.findAndModify(
+	    {query: {_id: mongojs.ObjectId(id)},
+	     update: {$set: {title: req.body.skill,
+			     desc: req.body.desc} },
+	     new: true
+	    }, function(err, doc) {
+		res.json(doc);
+	    });
+    }
 });
 
-app.listen(3000);
-console.log("Server running on port 3000");
+
+app.listen(8080);
+console.log("Server running on port 8080");
