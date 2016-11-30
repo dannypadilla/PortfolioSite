@@ -51,7 +51,7 @@
 	    <div class="intro-text">
 	      <span class="name">Danny</span>
 	      <hr class="star-light">
-	      <span class="skills">Student - Software Engineer - Other</span>
+	      <span class="skills">Student - Software Engineer - MEAN Stack Developer</span>
 	    </div>
 	  </div>
 	</div>
@@ -59,12 +59,14 @@
     </header>
 
     <!-- Admin View -->
+
+    <!-- education -->
     <section id="admin">
       <div class="container" ng-controller="AppCtrl">
 	
 	<div class="row">
 	  <div class="col-lg-12 text-center">
-	    <h2>Admin View</h2>
+	    <h2>Education</h2>
 	    <hr class="star-primary">
 	  </div>
 	</div>
@@ -85,15 +87,89 @@
 	      <td><input class="form-control" ng-model="entry.school"></td>
 	      <td><input class="form-control" ng-model="entry.degree"></td>
 	      <td><input class="form-control" ng-model="entry.year"></td>
-	      <td><button class="btn btn-primary" ng-click="addEntry()">Add</button></td>
+	      <td><button class="btn btn-primary" ng-click="addEdu()">Add</button></td>
 	      <td><button class="btn = btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
 	    </tr>
 	    <tr ng-repeat="entry in portfolio | filter:{type: 'edu'}">
 	      <td>{{entry.school}}</td>
-
-
       	      <td>{{entry.degree}}</td>
 	      <td>{{entry.year}}</td>
+	      <td><button class="btn btn-danger" ng-click="remove(entry._id)">Remove</button></td>
+	      <td><button class="btn btn-warning" ng-click="edit(entry._id)">Edit</button></td>
+	    </tr>
+	  </tbody>
+	</table>
+	
+      </div>
+    </section>
+
+    <!-- skillz admin -->
+    <section id="skills">
+      <div class="container" ng-controller="AppCtrl">
+	
+	<div class="row">
+	  <div class="col-lg-12 text-center">
+	    <h2>Skills</h2>
+	    <hr class="star-primary">
+	  </div>
+	</div>
+
+	<!-- original html: incorporate -->
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <Th>Skills</th>
+	      <th>Action</th>
+	      <th>&nbsp;</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td><input class="form-control" ng-model="entry.skill"></td>
+	      <td><button class="btn btn-primary" ng-click="addSkill()">Add</button></td>
+	      <td><button class="btn = btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+
+	    </tr>
+	    <tr ng-repeat="entry in portfolio | filter:{type: 'skill'}">
+	      <td>{{entry.skill}}</td>
+	      <td><button class="btn btn-danger" ng-click="remove(entry._id)">Remove</button></td>
+	      <td><button class="btn btn-warning" ng-click="edit(entry._id)">Edit</button></td>
+	    </tr>
+	  </tbody>
+	</table>
+	
+      </div>
+    </section>
+    
+    <!-- projects -->
+    <section id="projects">
+      <div class="container" ng-controller="AppCtrl">
+	
+	<div class="row">
+	  <div class="col-lg-12 text-center">
+	    <h2>Projects</h2>
+	    <hr class="star-primary">
+	  </div>
+	</div>
+
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <Th>Title</th>
+	      <th>Description</th>
+	      <th>&nbsp;</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td><input class="form-control" ng-model="entry.title"></td>
+	      <td><input class="form-control" ng-model="entry.desc"></td>
+	      <td><button class="btn btn-primary" ng-click="addProject()">Add</button></td>
+	      <td><button class="btn = btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+	    </tr>
+	    <tr ng-repeat="entry in portfolio | filter:{type: 'project'}">
+	      <td>{{entry.title}}</td>
+      	      <td>{{entry.desc}}</td>
 	      <td><button class="btn btn-danger" ng-click="remove(entry._id)">Remove</button></td>
 	      <td><button class="btn btn-warning" ng-click="edit(entry._id)">Edit</button></td>
 	    </tr>

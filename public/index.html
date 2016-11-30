@@ -52,9 +52,9 @@
 	    <div class="intro-text">
 	      <span class="name">Danny</span>
 	      <hr class="star-light">
-	      <span class="skills">Student - Software Engineer - Other</span>
+	      <span class="skills">Student - Software Engineer - MEAN Stack Developer</span>
 	      <div>
-	      	<img class="img-rounded" src="img/codeJib.png" alt="" height="100" display="block">
+	      	<img class="img-rounded" src="img/code.jpg" alt="cake is a lie" width="100%">
 		</div>
 	    </div>
 	  </div>
@@ -142,90 +142,9 @@
 	</table>
       </div>
     </section>
-
-    <!-- Admin View -->
-    <section id="admin">
-      <div class="container" ng-controller="AppCtrl">
-	
-	<div class="row">
-	  <div class="col-lg-12 text-center">
-	    <h2>Admin View</h2>
-	    <hr class="star-primary">
-	  </div>
-	</div>
-
-	<!-- Temp for each element from database -->
-	<div class="row">
-	  
-	  <div class="col-sm-4 portfolio-item">
-	    <a href="#educationModal1" class="education-link" data-toggle="modal">
-	      <div class="caption">
-		<div class="caption-content">
-		  <i class="fa fa-search-plus fa-3x"></i>
-		</div>
-		<img src="" class="img-responsive" alt="">
-	    </a>
-	    </div>    
-	  </div>
-	  
-	</div>
-
-	<!-- original html: incorporate -->
-	<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th>Name</th>
-	      <th>Email</th>
-	      <th>Number</th>
-	      <th>Action</th>
-	      <th>&nbsp;</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td><input class="form-control" ng-model="contact.name"></td>
-	      <td><input class="form-control" ng-model="contact.email"></td>
-	      <td><input class="form-control" ng-model="contact.number"></td>
-	      <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
-	      <td><button class="btn = btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
-	    </tr>
-	    <tr ng-repeat="contact in contactList">
-	      <td>{{contact.name}}</td>
-	      <td>{{contact.email}}</td>
-	      <td>{{contact.number}}</td>
-	      <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
-	      <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
-	    </tr>
-	  </tbody>
-	</table>
-      </div>
-    </section>
     
     <!-- Footer -->
-    <footer class="text-center">      
-      <div class="footer-above">
-	<div class="container">
-	  <div class="row">
-	    <div class="footer-col col-md-4">
-	      
-	    </div>
-	    <div class="footer-col col-md-4">
-	      <h3>Social</h3>
-	      <ul class="list-inline">
-		<li>
-		  <a href="htp://www.github.com/dannypadilla" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-		</li>
-		<li>
-		  <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-		</li>
-		<li>
-		  <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-		</li>
-	      </ul>
-	    </div>
-	  </div>
-	</div>
-      </div>
+    <footer class="text-center">
       <div class="footer-below">
 	<div class="container">
 	  <div class="row">

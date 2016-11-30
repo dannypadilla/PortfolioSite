@@ -14,8 +14,27 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
     };
     refresh();
 
-    $scope.addEntry = function() {
+    $scope.addEdu = function() {
 	console.log($scope.entry);
+	$scope.entry.type = "edu";
+	$http.post("/portfolio", $scope.entry).success(function(response) {
+	    console.log(response);
+	    refresh();
+	});
+    };
+
+    $scope.addSkill = function() {
+	console.log($scope.entry);
+	$scope.entry.type = "skill";
+	$http.post("/portfolio", $scope.entry).success(function(response) {
+	    console.log(response);
+	    refresh();
+	});
+    };
+
+    $scope.addProject = function() {
+	console.log($scope.entry);
+	$scope.entry.item = "project";
 	$http.post("/portfolio", $scope.entry).success(function(response) {
 	    console.log(response);
 	    refresh();
