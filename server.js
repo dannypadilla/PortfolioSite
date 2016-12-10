@@ -76,5 +76,5 @@ app.put("/portfolio/:id", function(req, res) {
 });
 
 
-app.listen(80);
-console.log("Server running on port 8080");
+app.listen(3000);
+console.log("Server running on port 3000");
