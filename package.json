@@ -1,0 +1,26 @@
+{
+  "name": "portfoliosite",
+  "version": "1.0.0",
+  "description": "portfolio and resume information",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongojs": "^2.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannypadilla/PortfolioSite.git"
+  },
+  "author": "danny padilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannypadilla/PortfolioSite/issues"
+  },
+  "homepage": "https://github.com/dannypadilla/PortfolioSite#readme"
+}
